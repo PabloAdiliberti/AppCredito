@@ -1,0 +1,38 @@
+<!-- <ion-list>
+  
+    <ion-item>
+      <ion-label floating>Nombre de usuario</ion-label>
+      <ion-input [(ngModel)]="username" type="text" aria-placeholder="Ingrese su User" value=""></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Contraseña</ion-label>
+      <ion-input [(ngModel)]="password" aria-placeholder="ingrese su Password"  type="password" value=""></ion-input>
+    </ion-item>
+  
+  </ion-list>
+  <div padding>
+  <button type="submit" (click)="Aceptar()">Login</button>
+  <button type="submit" (click)="Cancelar()">Login</button>
+  </div> -->
+
+<body>
+      
+  <form method="post">          
+    <h1>Registro</h1>
+    
+    <fieldset>   
+ 
+      <label floating>Nombre de usuario</label>
+      <input [(ngModel)]="username" type="text" name="user"  aria-placeholder="Ingrese su Usuario" value="">        
+      <label floating>Contraseña</label>
+      <input [(ngModel)]="password" aria-placeholder="ingrese su clave" name="pass" type="password" value="">
+      <label floating>Confirmar contraseña</label>
+      <input [(ngModel)]="passwordconfirm" aria-placeholder="Reingrese su clave" name="passconfirm" type="password" value="">
+    
+    </fieldset>
+    <button type="submit" (click)="Aceptar()">Aceptar</button>
+    <button type="submit" (click)="Cancelar()">Cancelar</button>                       
+  </form>
+  
+</body>
