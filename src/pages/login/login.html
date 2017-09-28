@@ -1,33 +1,3 @@
-<!-- <ion-list>
-  <h1> Bienvenido a la Carga de tu Celular, inicia sesion para comenzar, si no tenes cuenta, hace click en Registrarse</h1>
-    <ion-item>
-      <ion-label floating>Nombre de usuario</ion-label>
-      <ion-input [(ngModel)]="username" type="text" value=""></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label floating>Contraseña</ion-label>
-      <ion-input [(ngModel)]="password"  type="password" value=""></ion-input>
-    </ion-item>
-  
-  </ion-list>
-  
-  <div padding>
-    <button ion-button full class="boton_1" (click)="login()">Login</button>
-    <button ion-button full class="boton_1" (click)="Registrarse()">Registrarse</button>
-
-    <form>
-      <select id="country" name="country">
-        <option value="1">       Eliga usuario</option>          
-        <option value="1">Admin</option>
-        <option value="2">Usuario</option>
-        <option value="3">Invitado</option>
-        <option value="4">j1</option>
-        <option value="5">j2</option>
-      </select>
-    </form>
- 
-  </div> -->
 
   <body>
 
@@ -53,7 +23,7 @@
         <ion-list>
           <ion-item>
             <ion-label>Seleccione un Usuario...</ion-label>
-            <ion-select name="firstField" [(ngModel)]="tipoUser" (ionChange)="UserValido()">
+            <ion-select  name="firstField" [(ngModel)]="tipoUser" (ionChange)="UserValido()">
               <ion-option value="usuario">Usuario</ion-option>
               <ion-option value="admin">Administrador</ion-option>
               <ion-option value="invitado">Invitado</ion-option>

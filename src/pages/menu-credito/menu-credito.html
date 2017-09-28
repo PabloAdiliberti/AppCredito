@@ -1,0 +1,23 @@
+<body>
+    
+  <form method="post">
+
+      <button type="submit" (click)="scan()">Scaner </button>
+      <!-- <div *ngIf="scanData">
+          <p>Scanned Text :  {{scanData.text}}</p>
+          <p>Scanned Format :  {{scanData.format}}</p>
+  
+      </div> -->
+
+      <input type="text"  id="1" name="ua"  [(ngModel)]="CreditoACargar" disabled>
+     
+
+      <button type="submit" (click)="Cargar()">Cargar credito</button>
+
+      <input type="text"  id="m" name="u"  [(ngModel)]="CreditoMensaje" disabled>
+
+      <!-- <button type="submit" (click)="GetCredito()">Verificar credito</button> -->
+
+</form>
+
+</body>
