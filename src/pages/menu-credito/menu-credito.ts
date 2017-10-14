@@ -12,14 +12,12 @@ import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database
 export class MenuCreditoPage {
 
   scanData : {};
-  //encodeData : string ;
-  //encodedData : {} ;
   options :BarcodeScannerOptions;
   list: FirebaseListObservable<any>;
   usuarioIngresado:string;
-  credito100:boolean
-  credito50:boolean;
-  credito10:boolean;
+  credito100:string
+  credito50:string;
+  credito10:string;
   codigo : string;
   ExiteUsuario:boolean;
   MiUsuario:any;
@@ -58,12 +56,12 @@ export class MenuCreditoPage {
         {
           this.list.push({
           usuario:this.usuarioIngresado,
-          credito10:false,
-          credito50:false,
-          credito100:false});
-          this.credito10 = false;
-          this.credito50 =false;
-          this.credito100 = false;
+          credito10:"",
+          credito50:"",
+          credito100:""});
+          this.credito10 = "";
+          this.credito50 = "";
+          this.credito100 = "";
         }
         this.GetCredito();
         this.getCreditoACargar();
@@ -93,15 +91,15 @@ export class MenuCreditoPage {
   {   
         if ("8c95def646b6127282ed50454b73240300dccabc" == this.codigo) {
  
-          if(!this.credito10)
+          if(this.credito10 == "")
           {
               this.MiUsuario.update({
-                credito10:true,
+                credito10:"8c95def646b6127282ed50454b73240300dccabc",
                 credito50:this.credito50,
                 credito100:this.credito100
             });
 
-            this.credito10 = true;
+            this.credito10 = "8c95def646b6127282ed50454b73240300dccabc";
 
             let alert = this.alertCtrl.create({
               title: "Mensaje:",
@@ -126,15 +124,15 @@ export class MenuCreditoPage {
 
       } else if ("ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172 " == this.codigo) {
 
-        if(!this.credito50)
+        if(this.credito50 == "")
         {
             this.MiUsuario.update({
               credito10:this.credito10,
-              credito50:true,
+              credito50:"ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172 ",
               credito100:this.credito100
           });
 
-          this.credito50 = true;
+          this.credito50 = "ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172 ";
 
           let alert = this.alertCtrl.create({
             title: "Mensaje:",
@@ -158,15 +156,15 @@ export class MenuCreditoPage {
         
       } else if("2786f4877b9091dcad7f35751bfcf5d5ea712b2f" == this.codigo){
         
-        if(!this.credito100)
+        if(this.credito100 == "")
         {
             this.MiUsuario.update({
               credito10:this.credito10,
               credito50:this.credito50,
-              credito100:true
+              credito100:"2786f4877b9091dcad7f35751bfcf5d5ea712b2f"
           });
 
-          this.credito100 = true;
+          this.credito100 = "2786f4877b9091dcad7f35751bfcf5d5ea712b2f";
 
           let alert = this.alertCtrl.create({
             title: "Mensaje:",
@@ -204,28 +202,21 @@ export class MenuCreditoPage {
    
       this.Micredito = 0;
 
-      if(this.credito10)
+      if(this.credito10 != "")
       {
         this.Micredito += 10;
       }
 
-      if(this.credito50)
+      if(this.credito50 != "")
       {
         this.Micredito += 50;
       }
 
-      if(this.credito100)
+      if(this.credito100 != "")
       {
         this.Micredito += 100;
       }
-
       this.CreditoMensaje = "Tu credito es : "+this.Micredito;
-      // let alert = this.alertCtrl.create({
-      //   title: "Mensaje:",
-      //   subTitle: "Tu credito es : "+this.Micredito,
-      //   buttons: ['OK']
-      // });
-      //  alert.present();
   }
 
   getCreditoACargar()
